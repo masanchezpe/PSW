@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width= device -width, initial-scale=1, shrink-to-fit_no">
+		<title>Tesla Electronics</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/ac884f9491.js" crossorigin="anonymous"></script>
+		<link rel="icon" href="../img/bolt.ico"> 
+		<script>
+		function calculoDeResistencia()
+		{
+			var banda1 = document.calculadora.bandaUno.value;
+			var banda2 = document.calculadora.bandaDos.value;
+			var banda3 = document.calculadora.bandaTres.value;
+			var valorR = document.calculadora.valorResistencia.value;
+			
+			var valorR = parseFloat((banda1.toString()+banda2.toString()))*parseFloat(banda3);
+
+			document.calculadora.valorResistencia.value=valorR;
+		}
+		</script>
+	</head>
+<body style="background-image: url('../img/bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow">
+		<a class="navbar-brand"><i class="fas fa-bolt m-2"></i>Tesla Electronics</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	   		<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	   		<ul class="navbar-nav ml-auto">
+	   			<li class="nav-item active mx-2">
+	       			<a class="nav-link" href="../index.html"><i class="fa fa-home"></i> Inicio<span class="sr-only">(current)</span></a>	    	
+	    		</li>
+	   			<li class="nav-item mx-3">
+	       			<a class="nav-link mx-1" href="#"><i class="fa fa-user mr-1"></i>Administrador</a>
+	   			</li>
+	   			<li class="nav-item dropdown mx-2">
+	       			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	       				<i class="fas fa-database"></i>
+	       				Inventario
+	       			</a>
+	       			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+			        	<a class="dropdown-item" href="add.html"><i class="far fa-plus-square mr-1"></i>Ingresar</a>
+			          	<a class="dropdown-item" href="update.html"><i class="fas fa-sync-alt mr-1"></i>Actualizar</a>
+			          	<a class="dropdown-item" href="delete.html"><i class="far fa-trash-alt mr-1"></i>Eliminar</a>
+			          	<a class="dropdown-item" href="search.html"><i class="fas fa-search mr-1"></i>Consultar</a>
+	       			</div>
+	   			</li>
+	   			<li class="nav-item mx-2">
+	       			<a class="nav-link" href="sales.html"><i class="fas fa-dollar-sign mr-1"></i>Ventas</a>
+	   			</li>
+	   			<li class="nav-item dropdown mx-2">
+	       			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	       				<i class="fas fa-tools"></i>
+	       				Utilidades
+	       			</a>
+	       			<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+			        	<a class="dropdown-item" href="salesCalculator.html"><i class="fas fa-calculator mr-1"></i>Calculadora Ventas</a>
+			          	<a class="dropdown-item" href="resistorCalculator.html"><i class="fas fa-calculator mr-1"></i>Calculadora Resistencias</a>
+	       			</div>
+	   			</li>
+	   		</ul>
+		</div>
+	</nav>
+
+	<!-- Page Content -->
+	<div class="container">
+		<div class="card border-3 shadow m-5" style="background-color: #e0e0e0">
+	    	<div class="card-body p-1 m-3 ">
+	      		<h1 class="font-weight-light pb-1 text-center">Calculadora de Resistencias</h1>
+	      		<hr class="my-4 bg-dark">
+	      		<form class="needs-validation" name="calculadora" action="resistorCalculator.html" role="form" method="POST">
+					<div class="form-group row">
+	    				<label for="colFormLabel" class="col-sm-3 col-form-label text-right">Banda #1</label>
+	    				<div class="form-group col-sm-3">
+					    	<select name="bandaUno" class="form-control">
+						    	<option value="0" class="font-weight-bold bg-dark text-light">Negro</option>
+						      	<option value="1" class="font-weight-bold text-light" style="background-color: brown">Cafe</option>
+						      	<option value="2" class="font-weight-bold text-light" style="background-color: red">Rojo</option>
+						      	<option value="3" class="font-weight-bold orange-text" style="background-color: orange">Naranja</option>
+						      	<option value="4" class="font-weight-bold bg-warning text-dark">Amarillo</option>
+						      	<option value="5" class="font-weight-bold bg-success text-light">Verde</option>
+						      	<option value="6" class="font-weight-bold text-light" style="background-color: blue">Azul</option>
+						      	<option value="7" class="font-weight-bold text-light" style="background-color: purple">Violeta</option>
+						      	<option value="8" class="font-weight-bold text-dark" style="background-color: gray">Gris</option>
+						      	<option value="9" class="font-weight-bold text-dark">Blanco</option>
+					    	</select>
+					  	</div>
+  					</div>
+				    <div class="form-group row">
+    					<label for="colFormLabel" class="col-sm-3 col-form-label text-right">Banda #2</label>
+    					<div class="form-group col-sm-3">
+					    	<select name="bandaDos" class="form-control">
+						    	<option value="0" class="font-weight-bold bg-dark text-light">Negro</option>
+						      	<option value="1" class="font-weight-bold text-light" style="background-color: brown">Cafe</option>
+						      	<option value="2" class="font-weight-bold text-light" style="background-color: red">Rojo</option>
+						      	<option value="3" class="font-weight-bold orange-text" style="background-color: orange">Naranja</option>
+						      	<option value="4" class="font-weight-bold bg-warning text-dark">Amarillo</option>
+						      	<option value="5" class="font-weight-bold bg-success text-light">Verde</option>
+						      	<option value="6" class="font-weight-bold text-light" style="background-color: blue">Azul</option>
+						      	<option value="7" class="font-weight-bold text-light" style="background-color: purple">Violeta</option>
+						      	<option value="8" class="font-weight-bold text-dark" style="background-color: gray">Gris</option>
+						      	<option value="9" class="font-weight-bold text-dark">Blanco</option>
+					    	</select>
+					  	</div>
+  					</div>
+  					
+  					<div class="form-group row">
+    					<label for="colFormLabel" class="col-sm-3 col-form-label text-right">Banda #3</label>
+    					<div class="form-group col-sm-3">
+					    	<select name="bandaTres" class="form-control">
+						    	<option value="1" class="font-weight-bold bg-dark text-light">Negro</option>
+						      	<option value="10" class="font-weight-bold text-light" style="background-color: brown">Cafe</option>
+						      	<option value="100" class="font-weight-bold text-light" style="background-color: red">Rojo</option>
+						      	<option value="1000" class="font-weight-bold orange-text" style="background-color: orange">Naranja</option>
+						      	<option value="10000" class="font-weight-bold bg-warning text-dark">Amarillo</option>
+						      	<option value="100000" class="font-weight-bold bg-success text-light">Verde</option>
+						      	<option value="1000000" class="font-weight-bold text-light" style="background-color: blue">Azul</option>
+						      	<option value="10000000" class="font-weight-bold text-light" style="background-color: purple">Violeta</option>
+						      	<option value="100000000" class="font-weight-bold text-dark" style="background-color: gray">Gris</option>
+						      	<option value="1000000000" class="font-weight-bold text-dark">Blanco</option>
+					    	</select>
+					  	</div>
+  					</div>
+  					<div class="form-group row">
+    					<label for="colFormLabel" class="col-sm-3 col-form-label text-right"></label>
+    					<div class="col-sm-4">
+      						<button type="button" value="calcular" onclick="calculoDeResistencia()" class="btn btn-secondary col-sm-7">Calcular Resistencia</button>
+    					</div>
+  					</div>
+  					<div class="form-group row">
+    					<label for="colFormLabel" class="col-sm-3 col-form-label text-right">Valor de la resistencia :</label>
+    					<div class="col-sm-2">
+      						<input type="text" class="form-control col" name="valorResistencia">
+    					</div>
+    					<label for="colFormLabel" class="col-sm-3 col-form-label text-left">Ohmios</label>
+  					</div>
+				</form>
+	    	</div>
+	  	</div>
+	</div>
+	
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
